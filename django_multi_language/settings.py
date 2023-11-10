@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+import os
+
 import redis
 from datetime import timedelta
 from pathlib import Path
@@ -170,3 +172,7 @@ REDIS_JWT_TOKEN = redis.StrictRedis(host=REDIS_HOST,
 REDIS_OTP_CODE_TIME = 2 * 60
 REDIS_OTP_CODE = redis.StrictRedis(host=REDIS_HOST,
                                    port=REDIS_PORT, db=1)
+
+LOCALE_PATHS = (
+    os.path.join(os.path.dirname(__file__), "locale"),
+)
