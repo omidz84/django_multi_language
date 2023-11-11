@@ -1,1 +1,1 @@
-# django_multi_language
+# django multi language
